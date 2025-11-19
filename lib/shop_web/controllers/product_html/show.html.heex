@@ -1,0 +1,36 @@
+<%!-- <div>The product id is <%= assigns.id %></div>
+<div>The product id is <%= @id %></div>
+<div>The product name is <%= @name %></div> --%>
+
+<%!-- <div>This is the product page for <%= @product.name %></div> --%>
+
+<%!-- <%= if(@product) do %> --%>
+<%!-- DO the author says ugly syntax to it.  --%>
+<%!-- <.product name={@product.name}/> --%>
+<%!-- <% end %> --%>
+<%!-- Note when outputting something use equal to sign = --%>
+
+<p>ID: {@product.id}</p>
+<p>ID: {@product.name}</p>
+
+<%!-- Beautiful syntax --%>
+<%!-- <.product :if={@product} name={@product.name}/> --%>
+<%!-- <.product :if={@product} product={@product}/> --%>
+
+<%!-- <ShopWeb.CoreComponents.button>
+  Click me
+</ShopWeb.CoreComponents.button>
+
+<.button>
+  Click me
+</.button> --%>
+<%!-- The reason this works because in button macro in the core components we have already imported
+ShopWeb.CoreComponents --%>
+
+<%!-- <.back navigate={~p"/products"}>Back to product listing</.back> --%>
+<%!-- I think this is removed from the core components now. --%>
+
+<%!-- Creating back button --%>
+<.button navigate={~p"/products"}>
+  Back to product listing
+</.button>

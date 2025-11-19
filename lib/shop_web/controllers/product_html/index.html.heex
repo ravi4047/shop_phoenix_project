@@ -1,0 +1,21 @@
+<%!-- <div>The product id is <%= @id %></div> --%>
+<div>hello world</div>
+
+<p :if={@promo}>You have a promotional code <%= @promo %></p>
+
+<%!-- To add multiple query parameters --%>
+<a href={~p"/?#{[console: "xbox", admin: true, promo: "secret-code"]}"}>Go back to home page</a>
+
+<%!-- Using the full URL --%>
+<p>This is the full url: <%= url(~p"/products") %></p>
+
+
+<%!-- Ugly syntax --%>
+<%= for product <- @products do %>
+  <%!-- <.product name={product.name}/> --%>
+  <.product product={product}/>
+<% end %>
+
+<%!-- <.product :for={product <- @products} name={product.name}/> --%>
+<.product :for={product <- @products} product={product}/>
+<%!-- Note only reason you are doing by .product is because both templates and product component are in the same folder --%>

@@ -1,0 +1,29 @@
+<Layouts.flash_group flash={@flash} />
+<h1>Welcome to shop!</h1>
+<h2>This is the best video game e-commerce store</h2>
+
+<hr class="my-10"/>
+
+<p>Select your favorite console:</p>
+
+<%!-- This is verified routes. This verifies in compile time. --%>
+<a href={~p"/products"} class="btn btn-primary">View Products</a>
+
+<%!-- In the view and controller the verified routes are auto imported. --%>
+
+<form>
+  <select name="console" default={@console} class="form-select">
+    <option selected={@console == "pc"} value="pc">PC</option>
+    <option selected={@console == "ps5"} value="ps5">PlayStation 5</option>
+    <option selected={@console == "xbox"} value="xbox">Xbox Series X</option>
+    <option selected={@console == "switch"} value="switch">Nintendo Switch</option>
+  </select>
+
+  <button type="submit" class="btn btn-primary mt-4">Submit</button>
+
+  <%!-- # Note, we will first persist this option selection in cookies --%>
+</form>
+
+<p class="mt-4">Your selected console is: <%= @console %></p>
+
+<p :if={@promo}>You have a promotional code <%= @promo %></p>
