@@ -3,7 +3,7 @@ defmodule Shop.Repo.Migrations.CreateUsersAuthTables do
 
   def change do
     create table(:users) do
-      add :email, :string, null: false, collate: :nocase # collate is specific to sqlite. It means uppercase or lowercase same email
+      add :email, :string, null: false, collate: :nocase # collate is specific to sqlite. It means uppercase or lowercase same email. Case insensitive.
                                       # In postgres, it's :citext type in email in place of :string.
       add :hashed_password, :string
       add :confirmed_at, :utc_datetime

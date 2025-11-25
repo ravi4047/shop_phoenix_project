@@ -24,4 +24,23 @@ defmodule Shop.PromotionsFixtures do
 
     promotion
   end
+
+  @doc """
+  Generate a unique promotion code.
+  """
+  def unique_promotion_code, do: "some code#{System.unique_integer([:positive])}"
+
+  @doc """
+  Generate a promotion.
+  """
+  # def promotion_fixture(scope, attrs \\ %{}) do
+  #   attrs =
+  #     Enum.into(attrs, %{
+  #       code: unique_promotion_code(),
+  #       name: "some name"
+  #     })
+
+  #   {:ok, promotion} = Shop.Promotions.create_promotion(scope, attrs)
+  #   promotion
+  # end
 end

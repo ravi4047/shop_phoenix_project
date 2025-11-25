@@ -1,5 +1,7 @@
 defmodule Shop.Products do
 
+  # This is the context module for products.
+
   alias Shop.Repo
   alias Shop.Products.Product
 

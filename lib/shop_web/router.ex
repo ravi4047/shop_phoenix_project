@@ -60,11 +60,13 @@ defmodule ShopWeb.Router do
     get "/products", ApiController, :index
 
     resources "/coupons", CouponController, except: [:new, :edit]
+
+    resources "/promotions", PromotionController, except: [:new, :edit]
   end
 
   ### Dashboard
   # scope "/dashboard", ShopWeb do
-  #   pipe_through [:browser, :auth] # Here we used multiple pipelines
+  #   pipe_through [:browser, :auth] # Here we used multiple pipelines # 👉👉 Run sequentially
 
   #   get "/", DashboardController, :index
   # end

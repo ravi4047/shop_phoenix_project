@@ -2,7 +2,8 @@ defmodule Shop.Products.Product do
   use Ecto.Schema
   import Ecto.Changeset
 
-  @derive {Jason.Encoder, only: [:name, :slug, :console]}
+  @derive {Jason.Encoder, only: [:name, :slug, :console]} # If you return a json response,
+  # add this derive from Jason.Encoder to avoid the error of encoding.
   schema "products" do
     field :name, :string
     field :slug, :string

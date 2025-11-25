@@ -7,3 +7,6 @@ alias Shop.Products.Product
 # 👉 As far as I've seen recompiling is not enough, You need to restart it.
 
 import Ecto.Query #### To run complex query clauses, you need to import Ecto.Query
+# E.g. - select a specific field from a table, or run a where clause, etc.
+
+

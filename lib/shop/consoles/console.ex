@@ -2,6 +2,8 @@ defmodule Shop.Consoles.Console do
   use Ecto.Schema
   import Ecto.Changeset
 
+  # This is the schema for consoles table
+
   schema "consoles" do
     field :name, :string
     field :price, :integer

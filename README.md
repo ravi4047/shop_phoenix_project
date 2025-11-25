@@ -37,6 +37,12 @@ priv/assets - Where your assets are there
 
 > It's an MVC pattern
 
+> **lib** has two folders - shop and shop_web.
+  - shop is for business logic (mvc pattern)
+  - shop_web is to expose to the external world (controllers + views stuff)
+
+> 
+
 #### Request Lifecycle
 - The endpoint gets the request first. 
 - The last part of the endpoint is Router which maps to specific controller and specific action

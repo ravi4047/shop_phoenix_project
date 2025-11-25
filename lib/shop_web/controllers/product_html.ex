@@ -22,7 +22,7 @@ defmodule ShopWeb.ProductHTML do
 
   alias Shop.Products.Product
 
-  attr :product, Product, required: true
+  attr :product, Product, required: true # 👉👉 This is like props in react
   def product(assigns) do
     ~H"""
     <.link href={~p"/products/#{@product.slug}"} class="block">{@product.name}</.link>

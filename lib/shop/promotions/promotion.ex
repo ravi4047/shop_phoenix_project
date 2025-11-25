@@ -5,16 +5,17 @@ defmodule Shop.Promotions.Promotion do
   schema "promotions" do
     field :name, :string
     field :code, :string
-    field :expires_at, :utc_datetime
+    field :user_id, :id
 
     timestamps(type: :utc_datetime)
   end
 
   @doc false
-  def changeset(promotion, attrs) do
+  def changeset(promotion, attrs, user_scope) do
     promotion
-    |> cast(attrs, [:name, :code, :expires_at])
-    |> validate_required([:name, :code, :expires_at])
+    |> cast(attrs, [:name, :code])
+    |> validate_required([:name, :code])
     |> unique_constraint(:code)
+    |> put_change(:user_id, user_scope.user.id)
   end
 end

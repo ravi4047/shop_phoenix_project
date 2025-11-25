@@ -1,6 +1,9 @@
 defmodule ShopWeb.ProductController do
   use ShopWeb, :controller
 
+  # 👉👉 To convert the any function into action, it should accept two parameters, connection and option
+
+
   # This is Copilot generated stuff.
 
   # alias Shop.Catalog
@@ -12,6 +15,7 @@ defmodule ShopWeb.ProductController do
   # But what's the use of context here do you remember??
   # I mean they create bunch of things including in the database
 
+  # 👉👉 This products is called a module attribute.
   # @products [
   #   %{id: "1", name: "God of war"},
   #   %{id: "2", name: "Skyrim"},
@@ -46,7 +50,9 @@ defmodule ShopWeb.ProductController do
     # |> render(:index)
 
     # 👉 Using Ecto: Repo query
-    # products = Repo.all(Product)
+    # products = Repo.all(Product) ## 👉👉 Don't call the Repo directly from controller. Use contexts.
+
+
     products = Products.list_products()
     dbg(products)
     conn
